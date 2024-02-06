@@ -71,7 +71,7 @@ class ResNet50FeatureExtractor(AbstractImageProcessor):
                 label = self._get_image_label(path)
                 image_features.append(features)
                 image_labels.append(label)
-            self._save_features_and_labels()
+            self._save_features_and_labels(images, image_features, image_labels)
             return images, image_features, image_labels
 
     def _save_features_and_labels(self, images, image_features, image_labels):
