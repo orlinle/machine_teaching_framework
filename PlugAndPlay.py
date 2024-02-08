@@ -18,13 +18,14 @@ data_processor = ResNet50FeatureExtractor(raw_data_path=raw_data_path,
                                           extracted_features_path=extracted_features_path)
 data_processor_name = "ResNet50"
 ############ TEACHING LOGIC CHOICE (DATA OR LEARNER CENTRIC) #############
-# -------------------------------------------------------------------------
+# -----------------------------------use this example of data-centric teaching logic--------------------------------------
 
 # teaching_logic = RandomTeachingLogic(image_candidates_list=data_processor.teaching_images_features,
 #                                      image_candidates_labels=data_processor.teaching_images_labels,
 #                                      image_candidate_paths=data_processor.teaching_images)
 # teaching_logic_name = "random"
-# -------------------------------------------------------------------------
+
+# --------------------------------OR use this example of learner-centric teaching logic-----------------------------------------
 virtual_learner = PrototypeLearner()
 teaching_logic = RandomDisagreeTeachingLogic(image_candidates_list=data_processor.teaching_images_features,
                                      image_candidates_labels=data_processor.teaching_images_labels,
