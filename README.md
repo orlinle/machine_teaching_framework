@@ -1,34 +1,28 @@
 # Welcome to your ready-to-go plug and play Machine Teaching framework code-base!
 
-This repository has everything you need to build a Machine Teaching MT framework from scratch, including:
-  1) Helpful abstract classes helping you focus on the functionality each of the components should implement.
-  2) Handy implementations of each of the components so you get a feel for how they interact with each other
-  3) 1.2.3... Demo! This code-based includes a script implementing a MT framework that is a ready to run. This demo exhibits an end-to-end use case of the code base and can guide future researchers on how everything comes together for a final, functional MT framework.
+This repository provides a comprehensive foundation for building a Machine Teaching (MT) framework from scratch. Here's what you'll find:
+  1) **Abstract Classes:** Abstract classes are provided to define the functionality expected from each component of the MT framework. These abstract classes serve as guides for implementing specific components.
+  2) **Component Implementations:** Handy implementations of each component are included to demonstrate how they interact with each other. These implementations offer practical examples of the abstract concepts outlined in the abstract classes.
+  3) **Demo Script:** A demo script showcases an end-to-end use case of the MT framework. This script runs seamlessly and provides insights into how all components come together to form a functional MT framework.
 
-**To run this code simply clone the repository and run the PlugAndPlay.py script.**
+**To run this code simply clone the repository and run the `PlugAndPlay.py` script.**
 
 This code-base contains 2 main flows:
 ## Data preparation flow:
 ![Data preparation flow](https://raw.githubusercontent.com/orlinle/machine_teaching_framework/master/readme_img/Data_prep_concise.png)
 
-This flow runs once per dataset and its products can be re-used for future MT flows. The data prepration flow includes two main components:
-   - **Dataset Download:** Downloading a dataset into a local folder (e.g., Datasets/Binary_mnist - contains images of 2 mnist classes) _DatasetDownload.py_ is a helper script which downloads a given number of images from keras datasets and saves them locally.
-   - **Feature Extraction:** Creating image representations of all the images and saving them locally for future use (e.g., Dataset_features/Binary_mnist contains an array of all the images features and a corresponding array of labels)
-This flow needs to be executed once per dataset, and then the features can be re-used by multiple implementations of Teacher/Learner components.
+This flow runs once per dataset and consists of two main components:
+   - **Dataset Download:** This component downloads a dataset into a local folder (e.g., Datasets/Binary_mnist) using the `DatasetDownload.py` script. You can specify the number of images to download.
+   - **Feature Extraction:** Here, image representations are created for all images and saved locally for future use. The extracted features and labels are stored in a designated folder (e.g., Dataset_features/Binary_mnist).
 
 ## Teaching flow:
 ![MT flow](https://raw.githubusercontent.com/orlinle/machine_teaching_framework/master/readme_img/mt_flow.png)
-This is the actual MT flow, where the teacher attempts to teach a human Learner. The building blocks of the MT flow are to be found within the file  _AbstractComponents.py_ where each MT component is represented by an abstract class, encompassing the methods that must be implemented in order to ensure smooth communication between the different components. _AbstractComponents.py_ serves as an excellent starting point for implementing a MT framework which is cohesive, modular and flexible to different implementations of specific components.
-In order to make the code-base easily comprehensive and extendable there are a few implementations of each component which may be found in the corresponding folders: 
-- Teachers: this folder creates different implementations of MT Teachers. Following the main trends in MT research, the implementations are divided into sub-modules of Batch Teachers and Interactive Teachers. There are multiple implementations of each, for the purpose of this code-base I provided an example of a Batch Teacher and I leave implementation of Interactive Teachers for future work.
-- Teaching logics: this folder holds implementations of the teaching logic utilized by the Teacher. Again, following literature trends I divided the implementations to two modules: Learner-centric and Data-centric. The main difference between them being that the Learner-centric teaching logics require a "Virtual Learner" - which is a representation of the human Learner (see next section). The Learner-centric logic relies on the Virtual Learner during sample choice, wheras Data-centric teaching logics will rely on the feature of the teaching images themselves.
-- Virtual Learners: this folder contains computational representations of the human Learner which may by utilized by the Learner-centric teaching logic when performing the teaching sample choice. Since the implementations of this component in the literature and diverse and varied, I opted to create different modules of Virtual Learners according to the archetypes of Learners in the literature: Cognitive Learner, Computational Learner (Gradual Learners) and Global Learners.
+This flow represents the core MT process, where a teacher instructs a human learner. Key components of this flow are defined in the `AbstractComponents.py` file, which holds abstract classes for each MT component. These abstract classes ensure smooth communication between different components and facilitate modularity and flexibility.
+The `Teachers`, `Teaching logics`, and `Virtual Learners` folders contain various implementations of specific MT components, sub-divided occaisonally according to popular trends in the research (i.e., Teaching logics are separated into Data-centric and Learner-centric modules).
 
-Finally, the component that brings it all together and performs the actual teaching process is encompassed in the _Evaluation component_. This essential component holds all the other building blocks and runs the teaching process, gathering metrics along the way, and finishes by creating visualizations and saving them to a given directory (Results). 
+Finally, `EvaluationComponent.py` brings everything together by orchestrating the teaching process, collecting metrics, generating visualizations, and saving results to a specified directory.
 
-In the structure of this project, along with the modular abstract classes and basic implementations, we hope to encourage future MT researchers to add their own implementations, creating a cohesive, united, reproducible and flexible research frontier.
-
-
+This project structure, along with modular abstract classes and basic implementations, aims to encourage researchers to contribute their own implementations, fostering a united, reproducible, and flexible research frontier.
 
 A visual guide to the repository:
 
