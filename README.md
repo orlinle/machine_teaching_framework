@@ -10,4 +10,4 @@ This repository has everything you need to build a MT framework from scratch, in
 To run this code simply clone the repository and run the PlugAndPlay.py script.
 Here's a visual guide to the repository:
 
-![Visual Guide]([http://url/to/img.png](https://raw.githubusercontent.com/orlinle/machine_teaching_framework/master/visual_guide.png)https://github.com/orlinle/machine_teaching_framework/blob/master/visual_guide.png)
+![Visual Guide](https://raw.githubusercontent.com/orlinle/machine_teaching_framework/master/visual_guide.png)https://github.com/orlinle/machine_teaching_framework/blob/master/visual_guide.png)
