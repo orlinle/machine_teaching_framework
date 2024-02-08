@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from typing import Union, List, Tuple, Dict
-from configs import Teacher_configs
 import numpy as np
 from PIL import Image
 import os, random
@@ -181,7 +180,6 @@ class AbstractTeacher(ABC):
         teaching_logic (AbstractTeachingLogic): Instance of teaching logic.
         human_query_text (str): Text for querying the human learner.
         total_teaching_samples (int): Total number of teaching samples.
-        config (Teacher_configs): Teacher configuration.
     """
     def __init__(self, teaching_logic: AbstractTeachingLogic, human_query_text: str, total_teaching_samples: int):
         """
