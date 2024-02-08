@@ -1,6 +1,6 @@
-# Welcome to your ready-to-go plug and play Machine Teaching (MT) framework code-base!
+# Welcome to your ready-to-go plug and play Machine Teaching framework code-base!
 
-This repository has everything you need to build a MT framework from scratch, including:
+This repository has everything you need to build a Machine Teaching MT framework from scratch, including:
   1) Helpful abstract classes helping you focus on the functionality each of the components should implement.
   2) Handy implementations of each of the components so you get a feel for how they interact with each other
   3) 1.2.3... Demo! This code-based includes a script implementing a MT framework that is a ready to run. This demo exhibits an end-to-end use case of the code base and can guide future researchers on how everything comes together for a final, functional MT framework.
